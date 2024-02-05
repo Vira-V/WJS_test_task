@@ -4,22 +4,23 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <script src="script.js" defer></script>
+    <title>Project 1. Menu</title>
   </head>
   <body>
     <div class="menu-container">
         <div>
-    <ul class="menu-item">
+    <ul class="menu-item" id="main-menu">
       <li>
-        <a href="#makijaz" class="menu-arrow-makeup" title="Makijaż">Makijaż</a>
-        <!-- <ul>
+        <a href="#makijaz" class="menu-arrow-makeup" title="Makijaż" data-submenu-id="makeup-submenu">Makijaż</a>
+        <ul class="submenu submenu-makeup" id="makeup-submenu">
           <li><a href="#test" title="Test 1">Test 1</a></li>
           <li><a href="#test2" title="Test 2">Test 2</a></li>
-        </ul> -->
+        </ul>
       </li>
       <li>
-        <a href="#twarz" class="menu-arrow-face" title="Twarz">Twarz</a>
-        <ul class="submenu">
+        <a href="#twarz" class="menu-arrow-face" title="Twarz" data-submenu-id="face-submenu">Twarz</a>
+        <ul class="submenu" id="face-submenu">
           <li>
             <a href="#kremy" class="submenu-title" title="Kremy">Kremy</a>
             <ul class="submenu-item">

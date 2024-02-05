@@ -92,8 +92,8 @@ body {
   transition: transform 0.5s;
 }
 
-.menu-item .menu-arrow-face:hover::after,
-.menu-item .menu-arrow-makeup:hover::after {
+.menu-arrow-makeup.submenu-open::after,
+.menu-arrow-face.submenu-open::after {
   transform: translateY(50%) rotate(-45deg);
 }
 
@@ -123,6 +123,11 @@ body {
 }
 
 .submenu {
+  display: none;
+  transition: opacity 0.5s ease;
+}
+
+.submenu-visible {
   display: flex;
   gap: 100px;
   background-color: var(--bg-color);
@@ -132,6 +137,7 @@ body {
   border-radius: 5px;
   left: 10px;
   width: 1200px;
+  opacity: 1;
 }
 
 .submenu::before {
@@ -145,8 +151,11 @@ body {
   transform: rotate(45deg);
 }
 
+.submenu-makeup::before {
+  left: 35px;
+}
+
 .submenu ul {
-  list-style: none;
   padding: 0;
   margin: 0;
 }
@@ -169,7 +178,6 @@ body {
   display: flex;
   gap: 5px;
   flex-direction: column;
-  align-items: flex-start;
 }
 
 .submenu-item .submenu-name {

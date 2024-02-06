@@ -79,11 +79,22 @@ body {
 
 #output {
   flex: 1;
-  padding: 10px;
+  padding: 10px 20px;
   overflow-y: auto;
 }
 
+.command-result:not(:last-child),
+.command-line {
+  font-family: var(--font3);
+  color: var(--white-color);
+  font-weight: 500;
+  font-size: 12px;
+  white-space: pre-wrap;
+  padding-bottom: 10px;
+}
+
 #input-container {
+  position: relative;
   background: var(--bg-color);
   border-radius: 5px;
   width: 686px;
@@ -106,4 +117,89 @@ body {
   color: var(--input-color);
   width: 3px;
   height: 21px;
+}
+
+#command-hints {
+  position: absolute;
+  bottom: 40px;
+  left: 0;
+  width: 50%;
+  border-radius: 5px;
+  margin-top: 5px;
+  padding: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  display: none;
+}
+
+#command-hints span {
+  padding: 5px;
+  cursor: pointer;
+}
+
+#command-hints span:hover {
+  background: var(--input-color);
+}
+
+.hint-selected {
+  background: var(--input-color);
+}
+
+@media only screen and (max-width: 768px) {
+  #terminal {
+    width: 90%;
+    margin: 20px auto;
+  }
+
+  .title-buttons {
+    gap: 3px;
+  }
+
+  #close-btn,
+  #minimize-btn,
+  #maximize-btn {
+    width: 8px;
+    height: 8px;
+  }
+
+  #output {
+    padding: 10px;
+  }
+
+  #input-container {
+    width: 95%;
+  }
+
+  #input {
+    width: calc(100% - 20px);
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  #terminal {
+    width: 90%;
+    margin: 10px auto;
+    height: auto;
+  }
+
+  #output {
+    padding: 10px;
+  }
+
+  .title-buttons {
+    display: none;
+  }
+
+  .terminal-name {
+    font-size: 10px;
+  }
+
+  #input-container {
+    width: 90%;
+    margin-bottom: 10px;
+  }
+
+  #input {
+    width: calc(100% - 20px);
+  }
 }

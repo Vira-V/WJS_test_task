@@ -132,6 +132,7 @@ async function fetchQuote() {
     if (data && data.quote && data.author) {
       const outputElement = document.getElementById("output");
       outputElement.innerHTML += `Random Quote: "${data.quote}" - ${data.author}<br>`;
+      outputElement.innerHTML += "<br>";
     } else {
       throw new Error("Invalid response format");
     }
